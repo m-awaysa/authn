@@ -29,7 +29,7 @@ document.addEventListener('alpine:init', () => {
                     username: this.username,
                 })
                 // Prompt the user to create a passkey
-                .then((response) => startRegistration(response.data))
+                .then((response) => startRegistration( console.log(response.data)))
                 // Verify the data with the server
                 .then((attResp) =>{
                     
