@@ -1,4 +1,3 @@
-
 import {
     startAuthentication,
     startRegistration,
@@ -32,7 +31,10 @@ document.addEventListener('alpine:init', () => {
                 // Prompt the user to create a passkey
                 .then((response) => startRegistration(response.data))
                 // Verify the data with the server
-                .then((attResp) => axios.post('/registration/verify', attResp))
+                .then((attResp) =>{
+                    
+                    return axios.post('/registration/verify', attResp)
+                } )
                 .then((verificationResponse) => {
                     if (verificationResponse.data?.verified) {
                         // If we're good, reload the page and
