@@ -29,10 +29,11 @@ document.addEventListener('alpine:init', () => {
                     username: this.username,
                 })
                 // Prompt the user to create a passkey
-                .then((response) => startRegistration( console.log(response.data)))
+                .then((response) => startRegistration( response.data))
+                .catch(error => console.error('Error in startRegistration:', error))
                 // Verify the data with the server
                 .then((attResp) =>{
-                    
+                    console.log(attResp);
                     return axios.post('/registration/verify', attResp)
                 } )
                 .then((verificationResponse) => {

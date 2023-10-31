@@ -154,6 +154,13 @@ class AuthenticationController extends Controller
             ),
             $serverRequest,
             $authenticatorAssertionResponse->getUserHandle(),
+            ['localhost']
+            // $publicKeyCredentialSource,
+            // $authenticatorAssertionResponse,
+            // $publicKeyCredentialRequestOptions,
+            // 'my-application.com',
+            // $userHandle,
+            // ['localhost']
         );
 
         // If we've gotten this far, the response is valid!
