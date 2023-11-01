@@ -21,7 +21,7 @@
         content="This is a demo of how to authenticate users in your Laravel app using a passkey." />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:creator" content="@joetannenbaum" />
-
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
