@@ -154,10 +154,7 @@ class AuthenticationController extends Controller
             ),
             $serverRequest,
             $authenticatorAssertionResponse->getUserHandle(),
-            ['localhost']
-
         );
-
 
         // If we've gotten this far, the response is valid!
 

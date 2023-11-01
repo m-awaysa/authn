@@ -98,12 +98,8 @@ class RegistrationController extends Controller
         $serializedOptions['extensions'] = $serializedOptions['extensions']->jsonSerialize();
 
         // Another thing we have to do manually for this to work the way we want to
-        if (isset($serializedOptions['authenticatorSelection']) && is_array($serializedOptions['authenticatorSelection'])) {
-            $serializedOptions['authenticatorSelection']['residentKey'] = AuthenticatorSelectionCriteria::RESIDENT_KEY_REQUIREMENT_PREFERRED;
-        } else {
-            // Handle the error condition, maybe set it as an array first.
-            $serializedOptions['authenticatorSelection'] = ['residentKey' => AuthenticatorSelectionCriteria::RESIDENT_KEY_REQUIREMENT_PREFERRED];
-        }
+        $serializedOptions['authenticatorSelection']['residentKey'] = AuthenticatorSelectionCriteria::RESIDENT_KEY_REQUIREMENT_PREFERRED;
+
         // It is important to store the user entity and the options object in the session
         // for the next step. The data will be needed to check the response from the device.
         $request->session()->put(
@@ -157,7 +153,6 @@ class RegistrationController extends Controller
             ),
             $serverRequest,
             ['localhost']
-
         );
 
         // If we've gotten this far, the response is valid!

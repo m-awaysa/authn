@@ -29,13 +29,9 @@ document.addEventListener('alpine:init', () => {
                     username: this.username,
                 })
                 // Prompt the user to create a passkey
-                .then((response) => startRegistration( response.data))
-                .catch(error => console.error('Error in startRegistration:', error))
+                .then((response) => startRegistration(response.data))
                 // Verify the data with the server
-                .then((attResp) =>{
-                   
-                    return axios.post('/registration/verify', attResp)
-                } )
+                .then((attResp) => axios.post('/registration/verify', attResp))
                 .then((verificationResponse) => {
                     if (verificationResponse.data?.verified) {
                         // If we're good, reload the page and
