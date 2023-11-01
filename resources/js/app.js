@@ -33,7 +33,7 @@ document.addEventListener('alpine:init', () => {
                 .catch(error => console.error('Error in startRegistration:', error))
                 // Verify the data with the server
                 .then((attResp) =>{
-                    console.log(attResp);
+                   
                     return axios.post('/registration/verify', attResp)
                 } )
                 .then((verificationResponse) => {

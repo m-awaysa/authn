@@ -156,11 +156,8 @@ class RegistrationController extends Controller
                 session(self::CREDENTIAL_CREATION_OPTIONS_SESSION_KEY)
             ),
             $serverRequest,
-            // ['localhost']
-            // $authenticatorAttestationResponse,
-            // $publicKeyCredentialCreationOptions,
-            // 'my-application.com',
-            // ['localhost']
+            ['localhost']
+
         );
 
         // If we've gotten this far, the response is valid!
